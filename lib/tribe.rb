@@ -9,4 +9,8 @@ class Tribe
     puts to_s
   end
 
+  def to_s
+    name
+  end
+
 end
