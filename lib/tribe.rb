@@ -16,4 +16,8 @@ class Tribe
 	   members.reject{ |member| member == immune }.sample
 	end
 
+  def delete(member)
+    members.delete(member)
+  end
+
 end

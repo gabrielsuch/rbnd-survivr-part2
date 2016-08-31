@@ -11,24 +11,28 @@ class Jury
   end
 
   def cast_votes(finalists)
+    votes = {}
+    finalists.each { |finalist| votes[finalist] = 0 }
+
     members.each do |member|
-      puts 0
+      choosed = finalists.sample
+      votes[choosed] += 1
+      puts "#{member} votes for #{choosed.name}".yellow
     end
 
-    finalists.each_with_index do |finalist, index|
-		    @finalists[finalist] = 3.5
-		end
-
-    return @finalists
+    return votes
   end
 
   def report_votes(votes)
-    votes.each { |finalist, vote| puts "#{finalist} #{vote}" }
+    votes.each { |finalist, vote| puts "#{finalist} gets #{vote} votes" }
   end
 
   def announce_winner(votes)
     votes.each do |finalist, vote|
-        return finalist if vote == 4
+        if vote > 3 then
+          puts "#{finalist.name} Won the game!".red
+          return finalist
+        end
     end
   end
 

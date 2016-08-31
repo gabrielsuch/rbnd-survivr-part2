@@ -18,7 +18,7 @@ class Game
   end
 
   def merge(name)
-		members = @tribes.map(&:members).flatten
+		members = tribes.map(&:members).flatten
 		merged = Tribe.new({ name: name, members: members })
 		clear_tribes
 		add_tribe(merged)
