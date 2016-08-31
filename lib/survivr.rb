@@ -31,7 +31,6 @@ def phase_one
     selected_tribe = @borneo.immunity_challenge
 		puts "#{selected_tribe} was the tribe selected to vote".yellow
 		voted_off = selected_tribe.tribal_council
-		selected_tribe.delete(voted_off)
 		puts "#{voted_off} was voted OUT!".red
   end
 end
@@ -46,7 +45,6 @@ def phase_two
     immune = @borneo.individual_immunity_challenge
     puts "#{immune} win the immunity".blue
     voted_off_contestant = @merge_tribe.tribal_council({immune: immune})
-    @merge_tribe.delete(voted_off_contestant)
     puts "#{voted_off_contestant} is OUT!".red
   end
 end
@@ -60,7 +58,6 @@ def phase_three
     immune = @borneo.individual_immunity_challenge
     puts "#{immune} wins the immunity".blue
 		voted_off_contestant = @merge_tribe.tribal_council(immune: immune)
-		@merge_tribe.delete(voted_off_contestant)
 		@jury.add_member voted_off_contestant
 		puts "#{voted_off_contestant}! is OUT!".red
   end

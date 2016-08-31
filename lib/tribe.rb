@@ -13,7 +13,9 @@ class Tribe
   end
 
   def tribal_council(immune = {})
-	   members.reject{ |member| member == immune }.sample
+	   eliminated = members.reject{ |member| member == immune[:immune] }.sample
+     delete(eliminated)
+     eliminated
 	end
 
   def delete(member)
