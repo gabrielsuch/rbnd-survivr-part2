@@ -25,4 +25,8 @@ class Game
 		merged
 	end
 
+  def individual_immunity_challenge
+    tribes.sample.members.sample
+  end
+
 end
