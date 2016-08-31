@@ -10,4 +10,8 @@ class Game
     return tribes
   end
 
+  def immunity_challenge
+    return tribes.sample
+  end
+
 end
