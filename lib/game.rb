@@ -14,4 +14,9 @@ class Game
     return tribes.sample
   end
 
+  def clear_tribes
+    @tribes = []
+    return tribes
+  end
+
 end
