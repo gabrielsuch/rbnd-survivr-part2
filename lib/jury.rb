@@ -3,6 +3,7 @@ class Jury
 
   def initialize
     @members = []
+    @finalists = {}
   end
 
   def add_member(member)
@@ -13,8 +14,12 @@ class Jury
     members.each do |member|
       puts 0
     end
-    
-    Hash[ finalists.collect { |finalist| [finalist, 0] } ]
+
+    finalists.each_with_index do |finalist, index|
+		    @finalists[finalist] = 3.5
+		end
+
+    return @finalists
   end
 
 end
