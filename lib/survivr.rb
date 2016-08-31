@@ -27,11 +27,14 @@ end
 
 def phase_two
   3.times do
-    
+
   end
 end
 
 def phase_three
+  7.times do
+    
+  end
 end
 
 
