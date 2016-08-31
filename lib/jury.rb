@@ -1,5 +1,5 @@
 class Jury
-  attr_reader :members
+  attr_accessor :members
 
   def initialize
     @members = []
@@ -10,7 +10,7 @@ class Jury
   end
 
   def cast_votes(finalists)
-    {}
+    Hash[ finalists.collect { |finalist| [finalist, 0] } ]
   end
 
 end
