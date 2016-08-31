@@ -10,6 +10,10 @@ class Jury
   end
 
   def cast_votes(finalists)
+    members.each do |member|
+      puts 0
+    end
+    
     Hash[ finalists.collect { |finalist| [finalist, 0] } ]
   end
 
