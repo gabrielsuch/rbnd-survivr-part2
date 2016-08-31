@@ -1,10 +1,9 @@
 class Tribe
   attr_reader :name, :members
 
-  def initialize args
-    args.each do |k,v|
-      instance_variable_set("@#{k}", v) unless v.nil?
-    end
+  def initialize(args = {})
+    @name = args[:name]
+    @members = args[:members]
 
     puts to_s
   end
@@ -12,5 +11,9 @@ class Tribe
   def to_s
     name
   end
+
+  def tribal_council(immune = {})
+	   members.reject{ |member| member == immune }.sample
+	end
 
 end
