@@ -7,16 +7,22 @@ class Game
 
   def add_tribe(tribe)
     tribes << tribe
-    return tribes
   end
 
   def immunity_challenge
-    return tribes.sample
+    tribes.sample
   end
 
   def clear_tribes
     @tribes = []
-    return tribes
   end
+
+  def merge(name)
+		members = @tribes.map(&:members).flatten
+		merged = Tribe.new({ name: name, members: members })
+		clear_tribes
+		add_tribe(merged)
+		merged
+	end
 
 end
