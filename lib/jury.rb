@@ -22,4 +22,8 @@ class Jury
     return @finalists
   end
 
+  def report_votes(votes)
+    votes.each { |finalist, vote| puts "#{finalist} #{vote}" }
+  end
+
 end
